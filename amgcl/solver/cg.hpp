@@ -196,8 +196,9 @@ class cg {
                 backend::axpby(-alpha, *q, one, *r);
 
                 res_norm = norm(*r);
-                if (prm.verbose && iter % 5 == 0)
-                    std::cout << iter << "\t" << std::scientific << res_norm / norm_rhs << std::endl;
+                if (prm.verbose && iter % 1 == 0)
+                    std::cout << iter << "\t" << std::scientific << res_norm << std::endl;
+                    //std::cout << iter << "\t" << std::scientific << res_norm / norm_rhs << std::endl;
             }
 
             return std::make_tuple(iter, res_norm / norm_rhs);
